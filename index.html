@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f7ff; /* light blue */
+      text-align: center;
+      margin: 25px;
+    }
+
+    h1 {
+      color: #336699; /* darker blue */
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+      color: #456;
+    }
+
+    select, input {
+      padding: 15px;
+      font-size: 14px;
+      width: 85px;
+      margin: 8px;
+      border: 1px solid #99ccff; /* light blue border */
+      border-radius: 15px;
+      box-sizing: border-box;
+      background-color: #dff0d5; 
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #66cc66; /* light green border on focus */
+    }
+
+    select option:checked {
+      background-color: #66cc66; /* light green background for selected option */
+      color: #dff0d5; /* white text for selected option */
+    }
+
+    #ageInput {
+      display: none;
+    }
+
+    #choiceContainer {
+      height: '150px';
+    }
+
+    #buttonContainer {
+      margin-top: 10px;
+    }
+
+    #rel {
+      background-color: #e6f7ff;
+      border: none;
+    }
+
+    #responseContainer {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    #submitButton {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #66cc66; /* light green */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body id = "body">
+  <h1>מה תרצו ליצור?</h1>
+<div id = "choiceContainer">
+  <button id = "rel" onclick="rel()" style="display: none;"></button>
+  <label for="category">סוג:</label>
+  <select id="category" >
+    <option value="ברכה">ברכה</option>
+    <option value="שיר">שיר</option>
+    <option value="סיפור">סיפור</option>
+  </select>
+
+  <label  for="atmosphere">אווירה:</label>
+  <select id="atmosphere">
+    <option value="שמחה">שמחה</option>
+    <option value="עצובה">עצובה</option>
+    <option value="מרגשת">מרגשת</option>
+  </select>
+
+  <label for="event">אירוע:</label>
+  <select id="event" onchange="handleEventChange()">
+    <option value="מבחן">מבחן</option>
+    <option value="יום הולדת">יום הולדת</option>
+  </select>
+
+  <div id="ageInput" style="display: none;">
+    <label  for="age">גיל</label>
+    <input type="number" id="age" />
+  </div>
+</div>
+
+ 
+  <div id="buttonContainer">
+    <button id="submitButton" onclick="submitChoices()">תייצר את מה שביקשתי בבקשה.</button>
+  </div>
+
+  <div id="responseContainer" style="display: none;"></div>
+
+
+  <script src="client.js"></script>
+</body>
+</html>
